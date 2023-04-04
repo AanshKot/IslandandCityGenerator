@@ -27,7 +27,13 @@ public class Edge {
         return this.node2;
     }
 
-    // public calcWeight(){
+    public void calcWeight(){
+        int dx = (int) (this.node1.getNodeCentroid().getX() - this.node2.getNodeCentroid().getX());
 
-    // }
+        int dy = (int) (this.node1.getNodeCentroid().getY() - this.node2.getNodeCentroid().getY());
+
+
+
+        this.weight = (int) (Math.sqrt(dx * dx + dy * dy));
+    }
 }

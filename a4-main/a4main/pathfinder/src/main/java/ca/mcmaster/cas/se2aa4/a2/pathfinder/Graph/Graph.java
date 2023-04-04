@@ -6,7 +6,15 @@ import ca.mcmaster.cas.se2aa4.a2.io.Structs;
 import ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph.Edge.Edge;
 import ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph.Node.Node;
 
-public class Graph {
+
+public class Graph extends GraphADT {
+   
+   
+    // public Graph(int num_cities) {
+    //     super(num_cities);
+        
+    // }
+
     //node with id 7 --> {{1,2,4} --> {Edge1,Edge2,Edge4}}
     private List<Node> Nodes = new ArrayList<>();
     private List<Edge> Edges = new ArrayList<>();
@@ -14,14 +22,23 @@ public class Graph {
     //graph will be represented as an adjacency list
     //tile will store 
 
+    @Override
     public List<Node> getNodes(){
         return Nodes;
     }
 
+    @Override
     public List<Edge> getEdges(){
         return Edges;
     }
+
+    @Override
+    public Map<Integer, Map<Integer, Integer>> getAdjacencyList() {
+        return adjacency_list;
+    }
     
+    
+    @Override
     public void addNode(Structs.Vertex centroid,int id,int elevation){
         Node node = new Node(centroid,id,elevation);
         Nodes.add(node);
@@ -29,14 +46,16 @@ public class Graph {
         adjacency_list.put(node.getNodeID(),direct_neigh);
     }
 
+    @Override
     public void addEdge(Node node1,Node node2){
         
         if(adjacency_list.containsKey(node1.getNodeID()) && adjacency_list.containsKey(node2.getNodeID())){
             if(adjacency_list.get(node1.getNodeID()).containsKey(node2.getNodeID())){
-                System.out.println("edge already exists between them");
+                System.out.println("edge already exists between inputted nodes");
             }
             else{ 
-                Edge edge = new Edge(node1, node2);
+                Edge edge = new Edge(node1,node2);
+                edge.calcWeight();
                 Edges.add(edge);
                 
                 Map<Integer, Integer> neighbors = adjacency_list.getOrDefault(node1.getNodeID(), new HashMap<>());
@@ -51,12 +70,18 @@ public class Graph {
 
                 adjacency_list.put(node1.getNodeID(), neighbors);
 
-
+                System.out.println(adjacency_list);
             }
         }
 
+        else if(!(adjacency_list.containsKey(node1.getNodeID()) && adjacency_list.containsKey(node2.getNodeID()))){
+            System.out.println("inputted Node(s) doesn't exist");
+            
+        }
 
     }
+
+
 
 
 
