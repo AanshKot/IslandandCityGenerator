@@ -13,7 +13,7 @@ public class Main{
         // Structs.Mesh aMesh = new MeshFactory().read("img/input.mesh");
         Structs.Mesh aMesh = new MeshFactory().read(config.input());
 
-     
+        
         if(!(config.seed() == null)){
             island = IslandGenerator.generateIsland(config.seed(),aMesh);
         }
