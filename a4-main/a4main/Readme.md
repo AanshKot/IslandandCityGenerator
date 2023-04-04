@@ -58,6 +58,7 @@ java -jar island/island.jar -i img/input.mesh -o img/lagoon.mesh -seed 0.0.123,1
 ### Running pathfinder subproject
 
 ```
+To test correctness of shortest path function:
 java -jar pathfinder/pathfinder.jar
 
 

@@ -7,6 +7,8 @@ public class Edge {
     private Node node1;
     private Node node2;
     //make edge take in a color
+    //private int color
+    
 
     public Edge(Node node1, Node node2){
         this.node1 = node1;
