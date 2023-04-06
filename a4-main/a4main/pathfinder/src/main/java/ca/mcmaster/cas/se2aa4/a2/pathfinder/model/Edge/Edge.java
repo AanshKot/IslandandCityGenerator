@@ -1,6 +1,6 @@
-package ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph.Edge;
+package ca.mcmaster.cas.se2aa4.a2.pathfinder.model.Edge;
 
-import ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph.Node.Node;
+import ca.mcmaster.cas.se2aa4.a2.pathfinder.model.Node.Node;
 
 public class Edge {
     private int weight;

@@ -3,8 +3,7 @@ import java.util.List;
 
 import ca.mcmaster.cas.se2aa4.a2.io.Structs;
 import ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph.Graph;
-import ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph.Node.Node;
-
+import ca.mcmaster.cas.se2aa4.a2.pathfinder.model.Node.Node;
 import ca.mcmaster.cas.se2aa4.a2.pathfinder.pathfinder.shortestpath;
 
 public class Main {
@@ -17,7 +16,7 @@ public class Main {
         Structs.Vertex vertex3 = Structs.Vertex.newBuilder().setX(20).setY(0).build();
         
         graph.addNode(vertex,0, 0);
-        graph.addNode(vertex1,1,0);
+        graph.addNode(vertex1,1,101);
         graph.addNode(vertex2, 2, 0);
         graph.addNode(vertex3, 3, 0);
 
