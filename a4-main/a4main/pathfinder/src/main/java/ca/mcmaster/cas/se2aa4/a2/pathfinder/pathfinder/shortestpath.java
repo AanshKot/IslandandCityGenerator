@@ -7,13 +7,14 @@ import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
-import ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph.Graph;
-import ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph.Node.Node;
+
+import ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph.GraphADT;
+import ca.mcmaster.cas.se2aa4.a2.pathfinder.model.Node.Node;
 
 public class shortestpath implements pathfinder{
 
     @Override
-    public List<Node> findpath(Node start_node, Node end_node, Graph graph) {
+    public List<Node> findpath(Node start_node, Node end_node, GraphADT graph) {
         List<Node> nodes = graph.getNodes();
         Map<Integer, Map<Integer, Integer>> adj_list = graph.getAdjacencyList();
        

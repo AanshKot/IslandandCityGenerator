@@ -3,8 +3,10 @@ package ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph;
 import java.util.*;
 
 import ca.mcmaster.cas.se2aa4.a2.io.Structs;
-import ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph.Edge.Edge;
-import ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph.Node.Node;
+import ca.mcmaster.cas.se2aa4.a2.pathfinder.calculators.NodeTypeCalculator;
+import ca.mcmaster.cas.se2aa4.a2.pathfinder.model.Edge.Edge;
+import ca.mcmaster.cas.se2aa4.a2.pathfinder.model.Node.Node;
+
 
 
 public class Graph extends GraphADT {
@@ -40,7 +42,8 @@ public class Graph extends GraphADT {
     
     @Override
     public void addNode(Structs.Vertex centroid,int id,int elevation){
-        Node node = new Node(centroid,id,elevation);
+    
+        Node node = NodeTypeCalculator.calculatetype(centroid, id, elevation);
         Nodes.add(node);
         Map<Integer, Integer> direct_neigh = new HashMap<>();
         adjacency_list.put(node.getNodeID(),direct_neigh);
@@ -70,7 +73,6 @@ public class Graph extends GraphADT {
 
                 adjacency_list.put(node1.getNodeID(), neighbors);
 
-                System.out.println(adjacency_list);
             }
         }
 
@@ -80,6 +82,8 @@ public class Graph extends GraphADT {
         }
 
     }
+
+   
 
 
 
