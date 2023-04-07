@@ -15,10 +15,10 @@ public class Main {
         Structs.Vertex vertex2 = Structs.Vertex.newBuilder().setX(10).setY(4).build();
         Structs.Vertex vertex3 = Structs.Vertex.newBuilder().setX(20).setY(0).build();
         
-        graph.addNode(vertex,0, 0);
-        graph.addNode(vertex1,1,101);
-        graph.addNode(vertex2, 2, 0);
-        graph.addNode(vertex3, 3, 0);
+        graph.addNode(vertex,0, 0,1);
+        graph.addNode(vertex1,1,101,2);
+        graph.addNode(vertex2, 2, 0,3);
+        graph.addNode(vertex3, 3, 0,4);
 
         List<Node> nodes = graph.getNodes();
         Node Node0 = nodes.get(0);

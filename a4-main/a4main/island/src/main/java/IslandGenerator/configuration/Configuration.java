@@ -18,6 +18,7 @@ public class Configuration {
     public static final String BIOME = "biomes";
     public static final String SEED = "seed";
     public static final String MAP = "map";
+    public static final String CITIES = "cities";
 
     private CommandLine cli;
     public Configuration(String[] args) {
@@ -76,6 +77,9 @@ public class Configuration {
         return this.cli.getOptionValue(MAP,"default");
     }
 
+    public String cities(){
+        return this.cli.getOptionValue(CITIES,"50");
+    }
     private Options options() {
         Options options = new Options();
         options.addOption(new Option(INPUT, true, "Input file (MESH)"));
@@ -89,6 +93,7 @@ public class Configuration {
         options.addOption(Option.builder(BIOME).longOpt("biomes").hasArg().desc("biome type").build());
         options.addOption(Option.builder(SEED).longOpt("seed").hasArg().desc("Island Seed").build());
         options.addOption(Option.builder(MAP).longOpt("map").hasArg().desc("map type of island").build());
+        options.addOption(Option.builder(CITIES).longOpt("cities").hasArg().desc("number of cities on island").build());
         return options;
     }
 

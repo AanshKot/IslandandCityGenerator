@@ -42,11 +42,6 @@
       <artifactId>jts-core</artifactId>
       <version>1.19.0</version>
   </dependency>
-    <dependency>
-      <groupId>io.github.ace-design</groupId>
-      <artifactId>2aa4.mesh.visualizer</artifactId>
-      <version>1.0</version>
-    </dependency>
   <dependency>
     <groupId>commons-cli</groupId>
     <artifactId>commons-cli</artifactId>

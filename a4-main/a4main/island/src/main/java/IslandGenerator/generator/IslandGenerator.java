@@ -29,11 +29,12 @@ import IslandGenerator.calculators.HumidityCalculator;
 import IslandGenerator.calculators.TileTypeCalculator;
 import IslandGenerator.generator.ShapeGenerator;
 import ca.mcmaster.cas.se2aa4.a2.io.Structs;
+import ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph.Graph;
 
 public class IslandGenerator {
 
 
-    public static Island generateIsland(String shape, Structs.Mesh mesh, String elevation_profile,String num_lakes,String num_aquifers,String soil_type,String biome_type){
+    public static Island generateIsland(String shape, Structs.Mesh mesh, String elevation_profile,String num_lakes,String num_aquifers,String soil_type,String biome_type,String num_cities){
 
         
         Shape island_shape = ShapeGenerator.createShape(shape);
@@ -41,9 +42,12 @@ public class IslandGenerator {
         Biome biome_prof = BiomeGenerator.generateBiome(biome_type);
         int number_lakes = LakeGenerator.generate_lakes(num_lakes);
         int number_aquifers = LakeGenerator.generate_lakes(num_aquifers);
+        int cities = Integer.parseInt(num_cities);
         Soil soil = SoilGenerator.generateSoil(soil_type);
-
+        
         Island island = new Island(mesh);
+
+        Graph graph = new Graph();
 
         List<Tile> tileList = new ArrayList<Tile>();
 
@@ -68,6 +72,8 @@ public class IslandGenerator {
         tileList = AquiferGenerator.addAquifers(tileList, number_aquifers);
         tileList = addHumidity(tileList, vertices,soil);
 
+
+
         double min_humid = findMinHumidity(tileList);
         double max_humid = findMaxHumidity(tileList);
 
@@ -75,7 +81,11 @@ public class IslandGenerator {
         int max_elev = findMaxElevation(tileList);
 
         tileList = biome_prof.defineBiomes(tileList,min_humid,max_humid,min_elev,max_elev);
+
+        UrbanismGenerator.generate_cities(tileList, cities, vertices, graph);
+        UrbanismGenerator.generate_initial_roads(graph, tileList);
         
+        System.out.println(graph.getAdjacencyList().toString());
         island.setTiles(tileList);
 
         getSeed(island_shape, elev_prof, tileList, soil, biome_prof);
