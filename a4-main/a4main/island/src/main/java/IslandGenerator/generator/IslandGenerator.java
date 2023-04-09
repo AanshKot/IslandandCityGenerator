@@ -85,7 +85,6 @@ public class IslandGenerator {
 
         star_net.generate_star_network(tileList, cities, vertices, graph);
         
-        System.out.println(graph.getAdjacencyList().toString());
         
         island.setTiles(tileList);
         island.setCities(star_net.getCities());

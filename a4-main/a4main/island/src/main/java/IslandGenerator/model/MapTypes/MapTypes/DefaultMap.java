@@ -35,7 +35,7 @@ public class DefaultMap extends Map{
             
             newVertex.addProperties(color_property);
 
-            mesh.addVertices(city.getCentroidIdx(), newVertex);
+            mesh.addVertices(newVertex);
         
         }
 
