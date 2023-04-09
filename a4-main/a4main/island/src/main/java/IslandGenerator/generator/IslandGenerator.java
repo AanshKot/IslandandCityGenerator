@@ -44,7 +44,8 @@ public class IslandGenerator {
         int number_aquifers = LakeGenerator.generate_lakes(num_aquifers);
         int cities = Integer.parseInt(num_cities);
         Soil soil = SoilGenerator.generateSoil(soil_type);
-        
+        UrbanismGenerator star_net = new UrbanismGenerator();
+
         Island island = new Island(mesh);
 
         Graph graph = new Graph();
@@ -82,11 +83,13 @@ public class IslandGenerator {
 
         tileList = biome_prof.defineBiomes(tileList,min_humid,max_humid,min_elev,max_elev);
 
-        UrbanismGenerator.generate_cities(tileList, cities, vertices, graph);
-        UrbanismGenerator.generate_initial_roads(graph, tileList);
+        star_net.generate_star_network(tileList, cities, vertices, graph);
         
         System.out.println(graph.getAdjacencyList().toString());
+        
         island.setTiles(tileList);
+        island.setCities(star_net.getCities());
+        island.setRoads(star_net.getRoads());
 
         getSeed(island_shape, elev_prof, tileList, soil, biome_prof);
 

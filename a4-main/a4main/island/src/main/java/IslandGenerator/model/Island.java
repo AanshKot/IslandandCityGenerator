@@ -14,7 +14,7 @@ public class Island {
     private List<River> rivers;
     private Mesh islandMesh;
     private List<Node> cities;
-    private List<Edge> roads;
+    private List<List<Node>> roads;
 
 
 
@@ -46,11 +46,11 @@ public class Island {
         return this.cities;
     }
 
-    public void setRoads(List<Edge> roads){
+    public void setRoads(List<List<Node>> roads){
         this.roads = roads;
     }
 
-    public List<Edge> getRoads(){
+    public List<List<Node>> getRoads(){
         return this.roads;
     }
 

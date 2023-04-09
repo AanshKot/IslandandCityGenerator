@@ -40,12 +40,12 @@ public class Graph extends GraphADT {
     
     
     @Override
-    public void addNode(Structs.Vertex centroid,int id,int elevation,int tile_id){
+    public void addNode(Structs.Vertex centroid,int id,int elevation,int tile_id,boolean is_city,int centroid_idx){
         Random random = new Random();
 
         int randomNumber = random.nextInt(5) + 1;
 
-        Node node = new Node(centroid, id, elevation, "node", randomNumber,tile_id);
+        Node node = new Node(centroid, id, elevation, "node", randomNumber,tile_id,is_city,centroid_idx);
         Nodes.add(node);
         Map<Integer, Integer> direct_neigh = new HashMap<>();
         adjacency_list.put(node.getNodeID(),direct_neigh);
@@ -100,9 +100,6 @@ public class Graph extends GraphADT {
         }
         return neighbors;
     }
-
-   
-
 
 
 

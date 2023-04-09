@@ -18,7 +18,7 @@ public abstract class GraphADT {
     public abstract List<Edge> getEdges();
     public abstract List<Node> getNeighbhours(Node curr_node);
     public abstract Map<Integer,Map<Integer,Integer>> getAdjacencyList();
-    public abstract void addNode(Structs.Vertex centroid,int id,int elevation, int tile_id);
+    public abstract void addNode(Structs.Vertex centroid,int id,int elevation, int tile_id,boolean is_city,int centroid_idx);
     public abstract void addEdge(Node node1,Node node2);
 
 }
