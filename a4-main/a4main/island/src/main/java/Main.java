@@ -20,7 +20,7 @@ public class Main{
 
         else{
 
-            island = IslandGenerator.generateIsland(config.shape(), aMesh,config.altitude(),config.lakes(),config.aquifers(),config.soil_type(), config.biome());
+            island = IslandGenerator.generateIsland(config.shape(), aMesh,config.altitude(),config.lakes(),config.aquifers(),config.soil_type(), config.biome(),config.cities());
         //Island island = IslandGenerator.generateIsland("square", aMesh,"volcano","4","4");
         }
         

@@ -3,7 +3,6 @@ package ca.mcmaster.cas.se2aa4.a2.pathfinder.Graph;
 import java.util.*;
 
 import ca.mcmaster.cas.se2aa4.a2.io.Structs;
-import ca.mcmaster.cas.se2aa4.a2.pathfinder.calculators.NodeTypeCalculator;
 import ca.mcmaster.cas.se2aa4.a2.pathfinder.model.Edge.Edge;
 import ca.mcmaster.cas.se2aa4.a2.pathfinder.model.Node.Node;
 
@@ -41,9 +40,12 @@ public class Graph extends GraphADT {
     
     
     @Override
-    public void addNode(Structs.Vertex centroid,int id,int elevation){
-    
-        Node node = NodeTypeCalculator.calculatetype(centroid, id, elevation);
+    public void addNode(Structs.Vertex centroid,int id,int elevation,int tile_id,boolean is_city,int centroid_idx){
+        Random random = new Random();
+
+        int randomNumber = random.nextInt(5) + 1;
+
+        Node node = new Node(centroid, id, elevation, "node", randomNumber,tile_id,is_city,centroid_idx);
         Nodes.add(node);
         Map<Integer, Integer> direct_neigh = new HashMap<>();
         adjacency_list.put(node.getNodeID(),direct_neigh);
@@ -83,8 +85,21 @@ public class Graph extends GraphADT {
 
     }
 
-   
-
+    @Override
+    public List<Node> getNeighbhours(Node curr_node) {
+        List<Node> neighbors = new ArrayList<>();
+        Map<Integer,Integer> adjacent_nodes = adjacency_list.get(curr_node.getNodeID());
+        if (adjacent_nodes == null) {
+            return neighbors;
+        }
+        for (int id : adjacent_nodes.keySet()) {
+            Node neighbor = Nodes.get(id);
+            
+            neighbors.add(neighbor);
+            
+        }
+        return neighbors;
+    }
 
 
 
