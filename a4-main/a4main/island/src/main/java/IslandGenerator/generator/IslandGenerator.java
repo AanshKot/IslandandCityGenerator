@@ -96,9 +96,9 @@ public class IslandGenerator {
 
     }
 
-    public static Island generateIsland(String seed,Structs.Mesh mesh){
+    public static Island generateIsland(String seed,Structs.Mesh mesh,String num_cities){
         Island island = new Island(mesh);
-
+        int cities = Integer.parseInt(num_cities);
         String[] split_seed = seed.split("\\.");
         
         // shape of the island is the first input, 0 for circle, 1 for valley, shape is the next input 0 for circle 1 for square
@@ -121,6 +121,8 @@ public class IslandGenerator {
         elevation elevation_profile = ElevationProfileGenerator.createElevationProfile(elevation_num);
         Soil soil = SoilGenerator.generateSoil(soil_num);
         Biome biome_prof = BiomeGenerator.generateBiome(biome_prof_num);
+        Graph graph = new Graph();
+        UrbanismGenerator star_net = new UrbanismGenerator();
 
         List<Tile> tileList = new ArrayList<Tile>();
 
@@ -156,8 +158,12 @@ public class IslandGenerator {
         int max_elev = findMaxElevation(tileList);
 
         tileList = biome_prof.defineBiomes(tileList,min_humid,max_humid,min_elev,max_elev);
+        star_net.generate_star_network(tileList, cities, vertices, graph);
 
         island.setTiles(tileList);
+        island.setCities(star_net.getCities());
+        island.setRoads(star_net.getRoads());
+        
         return island;
 
 

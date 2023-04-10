@@ -15,7 +15,7 @@ public class Main{
 
         
         if(!(config.seed() == null)){
-            island = IslandGenerator.generateIsland(config.seed(),aMesh);
+            island = IslandGenerator.generateIsland(config.seed(),aMesh,config.cities());
         }
 
         else{
