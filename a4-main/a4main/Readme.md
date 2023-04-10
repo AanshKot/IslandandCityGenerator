@@ -74,6 +74,9 @@ Note: PDF versions of the SVG files were created with `rsvg-convert`.
 | F01 (GraphADT) | Create a GraphADT, model what attributes the nodes and edges should store | Aansh | April 2nd 2023| April 3rd 2023| D|
 | F02 (Pathfinder) | Create the pathfinder interface | Aansh | April 4th 2023| April 4th 2023| D|
 | F03 (Pathfinder) | Create the shortest path method, implementing the pathfinder interface | Aansh | April 4th 2023| April 4th 2023| D|
+| F04 (Island) | Add cities to the mesh | Aansh | April 6th 2023| April 8th 2023| D|
+| F03 (Island) | implement the pathfinder algorithm in-order to generate roads| Aansh|  April 7th |April 8th 2023| D|
+| F03 (Visualizer - Graphics Renderer) |visualize the roads and the cities | Aansh | April 8th 2023| April 9th 2023| D|
 
 
 
