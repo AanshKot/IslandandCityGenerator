@@ -15,6 +15,7 @@ It creates two jars:
 
 ## Examples of execution
 
+**NOTE: Must add img folder to a4main to run the following commands:
 ### Generating a mesh, grid or irregular
 
 ```
@@ -39,6 +40,8 @@ mosser@azrael A2 % java -jar visualizer/visualizer.jar -i img/irregular.mesh -o 
 
 ```
 mosser@azrael A2 % java -jar island/island.jar -i img/input.mesh -o img/lagoon.mesh -shape square 
+
+Regular Method: java -jar island/island.jar -i img/input.mesh -o img/lagoon.mesh -lakes 20 -aquifers 20 -soil dry -biomes mesa -cities 25
 
 Utilizing Seed CLI:
 Seed Structure: (#1.#2.#3.#4.#5.#6) where arguments are separated by periods. 
