@@ -8,7 +8,7 @@ import ca.mcmaster.cas.se2aa4.a2.pathfinder.model.Node.Node;
 
 
 
-public class Graph extends GraphADT {
+public class Graph implements GraphADT {
    
    
     // public Graph(int num_cities) {

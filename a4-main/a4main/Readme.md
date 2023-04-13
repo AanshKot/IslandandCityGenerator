@@ -2,6 +2,8 @@
 
   - Author: Sébastien Mosser
 
+
+ 
 ## How to install?
 
 ```
@@ -40,6 +42,8 @@ mosser@azrael A2 % java -jar visualizer/visualizer.jar -i img/irregular.mesh -o 
 
 ```
 mosser@azrael A2 % java -jar island/island.jar -i img/input.mesh -o img/lagoon.mesh -shape square 
+
+**NOTE: Sometimes when running this command the island.jar file gets a corruputed package for some reason and when running the commands below nothing seems to happen, to fix this just run mvn clean install again
 
 Regular Method: java -jar island/island.jar -i img/input.mesh -o img/lagoon.mesh -lakes 20 -aquifers 20 -soil dry -biomes mesa -cities 25
 

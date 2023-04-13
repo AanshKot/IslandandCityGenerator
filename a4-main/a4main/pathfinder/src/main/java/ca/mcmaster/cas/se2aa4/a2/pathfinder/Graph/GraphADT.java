@@ -7,7 +7,7 @@ import ca.mcmaster.cas.se2aa4.a2.io.Structs;
 import ca.mcmaster.cas.se2aa4.a2.pathfinder.model.Edge.Edge;
 import ca.mcmaster.cas.se2aa4.a2.pathfinder.model.Node.Node;
 
-public abstract class GraphADT {
+public interface GraphADT {
     //abstract class should take in the number of cities and Graph should super(num_cities), if polygon is a land tile we will create a city there
     // int num_cities;
 
