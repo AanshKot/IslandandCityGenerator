@@ -1,13 +1,11 @@
-# Mesh Generator (Assignment #2 Walkthrough)
+# Island and City Generator (Assignment #4 Walkthrough)
 
-  - Author: Sébastien Mosser
+  - Author: Aansh Kotian
 
-
- 
 ## How to install?
 
 ```
-mosser@azrael A2 % mvn install
+user A4 % mvn install
 ```
 
 It creates two jars:
@@ -21,9 +19,9 @@ It creates two jars:
 ### Generating a mesh, grid or irregular
 
 ```
-mosser@azrael A2 % java -jar generator/generator.jar -k grid -h 1080 -w 1920 -p 1000 -s 20 -o img/grid.mesh
-mosser@azrael A2 % java -jar generator/generator.jar -k grid -h 1080 -w 1920 -p 1000 -s 20 -o img/irregular.mesh
-mosser@azrael A2 % java -jar generator/generator.jar -k irregular -h 1080 -w 1920 -p 1000 -s 20 -o img/input.mesh
+user A4 % java -jar generator/generator.jar -k grid -h 1080 -w 1920 -p 1000 -s 20 -o img/grid.mesh
+user A4 % java -jar generator/generator.jar -k grid -h 1080 -w 1920 -p 1000 -s 20 -o img/irregular.mesh
+user A4 % java -jar generator/generator.jar -k irregular -h 1080 -w 1920 -p 1000 -s 20 -o img/input.mesh
 
 ```
 
@@ -32,16 +30,16 @@ One can run the generator with `-help` as option to see the different command li
 ### Visualizing a mesh, (regular or debug mode)
 
 ```
-mosser@azrael A2 % java -jar visualizer/visualizer.jar -i img/grid.mesh -o img/grid.svg          
-mosser@azrael A2 % java -jar visualizer/visualizer.jar -i img/grid.mesh -o img/grid_debug.svg -x
-mosser@azrael A2 % java -jar visualizer/visualizer.jar -i img/irregular.mesh -o img/irregular.svg   
-mosser@azrael A2 % java -jar visualizer/visualizer.jar -i img/irregular.mesh -o img/irregular_debug.svg -x
+user A4 % java -jar visualizer/visualizer.jar -i img/grid.mesh -o img/grid.svg          
+user A4 % java -jar visualizer/visualizer.jar -i img/grid.mesh -o img/grid_debug.svg -x
+user A4 % java -jar visualizer/visualizer.jar -i img/irregular.mesh -o img/irregular.svg   
+user A4 % java -jar visualizer/visualizer.jar -i img/irregular.mesh -o img/irregular_debug.svg -x
 ```
 
 ### Generating an island
 
 ```
-mosser@azrael A2 % java -jar island/island.jar -i img/input.mesh -o img/lagoon.mesh -shape square 
+user A4 % java -jar island/island.jar -i img/input.mesh -o img/lagoon.mesh -shape square 
 
 **NOTE: Sometimes when running this command the island.jar file gets a corruputed package for some reason and when running the commands below nothing seems to happen, to fix this just run mvn clean install again
 
