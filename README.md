@@ -1,8 +1,13 @@
 # Urbanism
 
 Authors for this project: Aansh Kotian
+
 Authors for previous aspects of this project (mesh generator, island): Aansh Kotian, Omar Bakr, Gigi Liang
-In collaboration, the authors created the mesh, the island, and its various configurations. Each member contributed equally, with each of us dedicating 33% of our efforts. The current task, Urbanism Pathfinder, builds on top of a mesh and island generator. Aansh Kotian takes sole responsibility in producing this city generator.
+
+In collaboration, the authors created the mesh, the island, and its various configurations. Each member contributed equally, with each of us dedicating 33% of our efforts. The current task, Urbanism Pathfinder, builds on top of a mesh and island generator.
+
+Aansh Kotian takes sole responsibility in producing this city generator.
+
 How to install?
 user A4 % mvn install clean package
 It creates a jar file for the generator, pathfinder, island, and visualizer subprojects:
