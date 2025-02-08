@@ -8,8 +8,10 @@ In collaboration, the authors created the mesh, the island, and its various conf
 
 Aansh Kotian takes sole responsibility in producing this city generator.
 
-How to install?
+## How to install?
+
 user A4 % mvn install clean package
+
 It creates a jar file for the generator, pathfinder, island, and visualizer subprojects:
 
 generator/generator.jar to generate a mesh
